@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: "Comic Sans MS";
+      font-size: 30px;
+      margin: 0;
+      background: url('transparentAlbum.png')  no-repeat right center fixed;
+      background-size: 60%;
+      z-index: -2;
+    }
+    .fire-container {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      height: 150px;
+      background: url('fire.gif') repeat-x;
+      z-index: 0;
+      filter: hue-rotate(-80deg) brightness(1.8) saturate(9);
+    }
+    .center-container {
+      text-align: center;
+      display: flex;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .gif-container {
+      margin: 0 20px;
+    }
+    .gif-container img {
+      width: 900px;
+      height: auto;
+      border-radius: 0px;
+      cursor: pointer;
+      transition: transform 0.3s ease-in-out;
+    }
+    .image-text {
+      margin-top: 10px;
+      color: black;
+    }
+  </style>
+</head>
+<body>
+  <div class="fire-container"></div>
+  <div class="center-container">
+    <div class="gif-container">
+      <img src="albumGIF.gif" alt="GIF Image" onclick="toggleGif()">
+      <div class="image-text">BUY IT NOW!!!</div>
+    </div>
+  </div>
+  <script>
+    var isGifPlaying = false;
+
+    function toggleGif() {
+      var gifImage = document.getElementById('gifImage');
+
+      if (isGifPlaying) {
+        gifImage.src = gifImage.src;
+      } else {
+        gifImage.src = 'albumGIF.gif';
+      }
+
+      isGifPlaying = !isGifPlaying;
+    }
+  </script>
+</body>
+</html>
